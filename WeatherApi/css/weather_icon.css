@@ -1,0 +1,68 @@
+.sunny {
+  width: 90%;
+  height: 90%;
+  fill: rgba(255, 214, 51, 1);
+  stroke: rgba(255, 214, 51, 0.5);
+  stroke-dasharray: 3px;
+  stroke-width: 15px;
+}
+
+#sun {
+  fill: rgba(255, 214, 51, 1);
+  stroke: rgba(255, 214, 51, 0.5);
+  stroke-dasharray: 3px;
+  stroke-width: 15px;
+}
+
+.cloudy_sunny {
+  width: 90%;
+  height: 90%;
+}
+
+.cloudy {
+  width: 90%;
+  height: 90%;
+}
+
+#cloud {
+  fill: rgb(242, 249, 254);
+}
+
+#cloud2 {
+  fill: rgb(225, 241, 252);
+}
+
+.overcast {
+  width: 90%;
+  height: 90%;
+}
+
+.overcast :hover #overcast_cloud {}
+
+#overcast_cloud {
+  fill: rgb(209, 209, 209);
+}
+
+#overcast_cloud2 {
+  fill: rgb(150, 146, 146);
+}
+
+.rainy {
+  width: 90%;
+  height: 90%;
+}
+
+.rainy_thunder {
+  width: 90%;
+  height: 90%;
+}
+
+#rain {
+  fill: rgb(221, 234, 247);
+}
+
+#thunder {
+  fill: rgba(255, 214, 51, 1);
+  stroke: rgba(255, 214, 51, 1);
+  stroke-width: 1;
+}

@@ -1,0 +1,636 @@
+@import _function
+       
+a
+    line-height: 16px
+    &:hover
+        text-decoration: none
+li
+    margin: 0
+    padding: 0
+.top_click
+    top: 24px !important
+    left: 12px !important
+    transform: rotate(-45deg) !important
+.mid_click
+    opacity: 0 !important
+.bot_click
+    top: 24px !important
+    left: 12px !important
+    transform: rotate(45deg) !important
+body
+    box-sizing: border-box3
+    font-family: "Segoe UI Mono", mono
+    background-color: #000
+nav
+    background-color: $nav_color
+    height: 49px
+    .nav_container
+        +AreaWidth(nav)
+        height: 100%
+        .logo
+            flex: 0 0 auto
+            height: 100%
+            width: 190px
+            @media (max-width: 1024px)
+                width: 60px
+            @media (max-width: 670px)
+                width: 30px
+            a
+                +LogoHover()
+                .logo_icon
+                    width: 16px
+                    rect
+                        fill: $logoIcon_color
+        .home_btn
+            height: 100%
+            width: 156px
+            flex: 0 0 auto
+            a
+                +font-stlye (16px, 600 ,#fff ,null)
+                transition: all 200ms linear 0ms
+                &:hover
+                    +font-stlye (16px, 600 ,rgb(0, 120, 212) ,null)
+        .navigation_btn
+            flex: 1 1 auto
+            +PaddingMidia(null,0px,120px,0px,420px)
+            +PaddingMidia(1460px,0px,60px,0px,120px)
+            +PaddingMidia(1024px,0px,0px,0px,120px)
+            ul
+                li
+                    +NavigationHover()
+                    a   
+                        +font-stlye (16px, 600 ,#fff,null)
+                        transition: all 200ms linear 0ms
+        .menu_btn
+            +absolute(0px ,10px,null,null)
+            height: 48px
+            width: 48px
+            z-index: 100
+            .bar
+                background-color: $logoIcon_color
+                width: 24px
+                height: 2px
+                transition: 0.3s
+            .top_bar
+                +absolute(17px ,null,null,12px)
+                transform: rotate(0deg)
+            .mid_bar
+                +absolute(24px ,null,null,12px)
+                opacity: 1
+            .bot_bar
+                +absolute(31px ,null,null,12px)
+                transform: rotate(0deg)
+        .menu
+            +absolute(48px,null,null,0px)
+            z-index: 999
+            display: none
+            li
+                width: 100%
+                padding: 25px 30px
+                cursor: pointer
+                a
+                    width: 100%
+                    +font-stlye (20px, null ,#fff ,null)
+                    transition: all 300ms ease 0ms
+            .menu_web:hover
+                background-color: $web_color
+            .menu_windows:hover
+                background-color: $windows_color
+            .menu_ios:hover 
+                background-color: $ios_color
+            .menu_android:hover
+                background-color: $android_color 
+
+
+            
+main
+    .introduction
+        background-color: $introduction_bg
+        .introduction_container
+            +AreaWidth(introduction)
+            padding: 145px 0px 60px
+            .introduction_textArea
+                flex: 0 0 auto
+                width: 410px
+                @media (max-width: 1280px)
+                    width: 50%
+                @media (max-width: 960px)
+                    width: 60%
+                @media (max-width: 670px)
+                    width: 100%
+                .introduction_textAreatextArea_header
+                    +font-stlye( 64px , 600 ,rgb(79, 229, 255) ,80px)
+                    margin: 0px 0px 0px -6px 
+                    @media (max-width: 767px)
+                        +font-stlye( 48px , 600 ,rgb(79, 229, 255) ,60px)
+                    @media (max-width: 670px)
+                        +font-stlye( 48px , 600 ,rgb(79, 229, 255) ,58px)
+                        margin: 60px 0px 30px -6px 
+                .introduction_textArea_inner
+                    margin: 100px 0px 30px
+                    @media (max-width: 767px)
+                        margin: 60px 0px 30px
+                    .textArea
+                        width: 100%
+                        max-width: 352px
+                        @media ( max-width: 1460px )
+                            max-width: 384px
+                        @media (max-width: 960px)
+                            max-width: 352px
+                        p
+                            +font-stlye(16px,600,#FFF,null)
+                            margin: 0 0 24px 0
+            .introduction_imgArea
+                flex: 1 1 auto
+                text-align: center
+                +PaddingMidia(1280px,0px,40px,null,null)
+                +PaddingMidia(960px,0px,0px,0px,30px)
+                @media (max-width: 1280px)
+                    width: 50%
+                @media (max-width: 960px)
+                    width: 40%
+                @media (max-width: 670px)
+                    display: none
+                .left_line
+                    +absolute(null ,null,155px,180px)
+                    @media (max-width: 1680px)
+                        +absolute(null ,null,160px,30px)
+                    @media (max-width: 1460px)
+                        +absolute(null ,null,120px,30px)
+                    @media (max-width: 1280px)
+                        display: none
+                .right_line
+                    +absolute(-15px ,180px,null,null)
+                    @media (max-width: 1680px)
+                        +absolute(-40px ,36px,null,null)
+                    @media (max-width: 1460px)
+                        +absolute(15px ,36px,null,null)
+                    @media (max-width: 1280px)
+                        display: none
+                .main_img
+                    @media (max-width: 960px)
+                        display: none
+                .main_img2
+                    display: none
+                    @media (max-width: 960px)
+                        width: 100%
+                        display: block
+    .device
+        position: relative
+        .device_container
+            +AreaWidth(block)
+            &::before
+                +BeforeAfter()
+                +absolute(0px,null,null,0px)
+                background-color: rgb(34, 128, 200)
+            &::after
+                +BeforeAfter()
+                +absolute(0px,0px,null,null)
+                background-color: rgb(95, 207, 99)
+            .device_web
+                +BlockStyle($web_color,rgb(12, 117, 197),device)
+            .device_windows
+                +BlockStyle($windows_color,rgb(54, 204, 230),device)
+            .device_ios
+                +BlockStyle($ios_color,rgb(182, 118, 230),device)
+            .device_android
+                +BlockStyle($android_color,rgb(80, 204, 85),device)
+            a
+                .icon
+                    min-height: 96px
+                    flex: 1 1 auto
+                    +PaddingMidia(null,26px,null,null,null)
+                    +PaddingMidia(1024px,30px,30px,16px,null)
+                .device_textArea
+                    flex: 0 0 auto
+                    height: 180px
+                    height: auto
+                    +PaddingMidia(null,0px,26px,null,null)
+                    +PaddingMidia(1024px,0px,30px,null,null)
+                    h2
+                        +font-stlye(32px,600,#000,40px)
+                        letter-spacing: -0.03rem
+                        margin: 0px 0px 26px
+                    p
+                        +font-stlye(16px,600,#000,20px)
+                        margin: 0px
+                .get_start
+                    height: 48px
+                    flex: 0 0 auto
+                    +PaddingMidia(null,0px,26px,10px,null)
+                    +PaddingMidia(1280px,0px,30px,10px,null)
+                    img
+                        margin: 0px 16px 0px 0px
+                    span
+                        +font-stlye(16px,null,#000)
+                        @media (max-width: 1280px)
+                            +font-stlye(14px,null,#000)
+    .natural
+        background: url(https://www.microsoft.com/design/fluent/assets/images/msft-verge-fluent.jpg) 50% center / cover no-repeat fixed rgb(204, 204, 204)
+        width: 100%
+        min-height: 768px
+        @media (max-width: 1280px)
+            min-height: 668px
+        @media (max-width: 960px)
+            background-attachment: scroll
+        @media (max-width: 670px)
+            min-height: 768px
+        .natural_container
+            +AreaWidth(natural)
+            .natural_header
+                +PaddingMidia(null,10px,20px,0px,null)
+                +PaddingMidia(1460px,10px,0px,0px,16px)
+                +PaddingMidia(1280px,20px,0px,60px,null)
+                +PaddingMidia(1024px,29px,0px,40px,null)
+                h2
+                    +font-stlye(128px ,600,#000,150px)
+                    @media (max-width: 1460px)
+                        +font-stlye(96px ,600,#000,120px)
+                    @media (max-width: 1024px)
+                        +font-stlye(86px ,600,#000,90px)
+                        margin: 0px
+                    @media (max-width: 670px)
+                        +font-stlye(64px ,600,#000,70px)
+                    @media (max-width: 500px)
+                        +font-stlye(48px ,600,#000,60px)
+            .natural_inner
+                max-width: 384px
+                padding: 0px 16px 0px 24px
+                margin: 60px 0px 0px
+                @media (max-width: 1460px)
+                    margin: 40px 0px 0px
+                @media (max-width: 1280px)
+                    margin: 0px
+                    padding: 0px 5px
+                @media (max-width: 1024px)
+                    padding: 0px 0px 0px 4px
+                p 
+                    +font-stlye(16px ,600,#000,24px)
+                    margin: 0px
+    .bigcircle
+        background-color: rgb(25, 25, 25)
+        .bigcircle_container
+            +AreaWidth(bigcircle)
+            .quadrilateral
+                +absolute(-200px,130px ,null ,null )
+                z-index: 4
+                @media (max-width: 1680px)
+                    +absolute(-200px,30px ,null ,null )
+                @media (max-width: 767px)
+                    +absolute(-300px,100px ,null ,null )
+                @media (max-width: 670px)
+                    display: none
+            .circle
+                padding: 60px 30px
+                width: 100%
+                img
+                    max-width: 600px
+                    width: 100%
+                    height: auto
+            .line
+                +absolute(570px,null ,null ,190px )
+                @media (max-width: 670px)
+                    +absolute(570px,null ,null ,90vw)
+    .features
+        background-color: rgb(25, 25, 25)
+        .features_container
+            +AreaWidth(features)
+            .features_inner
+                width: 384px
+                margin: 0px 0px 50px
+                padding: 0px 16px
+                @media (max-width: 960px)
+                    padding: 0px
+                p
+                    +font-stlye(16px ,600 ,rgb(255, 255, 255) , 24px )
+    .mountain
+        background-color: rgb(25, 25, 25)
+        .mountain_container
+            +absolute(null ,null ,80px ,0px)
+            z-index: 4
+            @media (max-width: 1024px)
+                +absolute(null ,null ,60px ,0px)
+            .mountain_inner
+                +AreaWidth(mountain)
+                h2
+                    +font-stlye(128px,600,rgb(25, 25, 25), 144px)
+                    margin: 0px 0px 0px 26px
+                    @media (max-width: 1680px)
+                        +font-stlye(96px,600,rgb(25, 25, 25), 128px)
+                    @media (max-width: 1280px)
+                        +font-stlye(96px,600,rgb(25, 25, 25), 104px)
+                    @media (max-width: 1024px)
+                        +font-stlye(86px,600,rgb(25, 25, 25), 90px)
+                        margin: 0
+                    @media (max-width: 670px)
+                        +font-stlye(64px,600,rgb(25, 25, 25), 70px)
+                    @media (max-width: 500px)
+                        +font-stlye(48px,600,rgb(25, 25, 25), 60px)
+        .mountain_img
+            img
+                min-width: 2000px
+    .design
+        min-height: 948px
+        background: url("../img/clouds.jpg") 50% center / cover no-repeat fixed rgb(0, 0, 0)
+        @media (max-width: 1280px)
+            min-height: 668px
+        @media (max-width: 960px)
+            background-attachment: scroll
+        .design_container
+            +AreaWidth(design)
+            .rhombus
+                +absolute(-240px,-260px,null,null)
+                width: 768px
+                @media (max-width: 1460px)
+                    display: none
+                .rhombus_black
+                    +absolute(-120px,null,null,2px)
+                    z-index: 2
+                .rhombus_white
+                    +absolute(0px,null,null,0px)
+                    z-index: 1
+            h2
+                +font-stlye(395px,600,#000,null)
+                @media (max-width: 1680px)
+                    +font-stlye(295px,600,#000,null) 
+                @media (max-width: 1280px)
+                    +font-stlye(228px,600,#000,null) 
+                @media (max-width: 670px)
+                    +font-stlye(168px,600,#000,null)
+                @media (max-width: 500px)
+                    +font-stlye(128px,600,#000,null)
+            .de
+                +absolute(-100px,null,null,0px)
+                @media (max-width: 1680px)
+                    +absolute(-40px,null,null,0px)
+                @media (max-width: 1460px)
+                    +absolute(-20px,null,null,0px)
+                @media (max-width: 1280px)
+                    +absolute(40px,null,null,14px)
+            .sign
+                +absolute(140px,-30px,null,null)
+                @media (max-width: 1680px)
+                    +absolute(120px,-30px,null,null)
+                @media (max-width: 1460px)
+                    +absolute(180px,-30px,null,null)
+                @media (max-width: 1280px)
+                    +absolute(220px,10px,null,null)
+            .black_line
+                +absolute(550px,null,null,370px)
+                @media (max-width: 1280px)
+                    display: none
+    .experience
+        background-color: rgb(204, 204, 204)
+        min-height: 820px
+        @media (max-width: 1280px)
+            min-height: 668px
+        @media (max-width: 670px)
+            min-height: 468px
+        .experience_comtainer
+            +AreaWidth(experience)
+            .experience_header
+                padding: 140px 40px 0px 8px
+                @media (max-width: 1460px)
+                    padding: 60px 40px 0px 8px
+                @media (max-width: 1280px)
+                    padding: 29px 0px 0px
+                h2
+                    +font-stlye(128px,600,#000,150px)
+                    @media (max-width: 1280px)
+                        +font-stlye(96px,600,#000,104px)
+                    @media (max-width: 1024px) 
+                        +font-stlye(86px,600,#000,90px)
+                        margin: 0
+                    @media (max-width: 670px)
+                        +font-stlye(64px,600,#000,70px)
+                    @media (max-width: 500px)
+                        +font-stlye(48px,600,#000,60px)
+            .experience_text
+                margin: 60px 0px 0px
+                max-width: 384px
+                padding: 0px 16px
+                @media ( max-width: 1024px )
+                    padding: 0px 0px 0px 4px
+                @media (max-width: 670px)
+                    margin: 40px 0px 0px
+                p
+                    +font-stlye(16px,600,#000,24px)
+        .experience_img
+            +absolute(200px,0px,null,null)
+            max-width: 1000px
+            @media (max-width: 1940px)
+                max-width: 900px
+            @media ( max-width: 1680px)
+                max-width: 50vw
+            @media (max-width: 1024px)
+                +absolute(200px,-20vw,null,null)
+                max-width: 70vw
+            @media (max-width: 767px)
+                max-width: 60vw
+            @media (max-width: 670px)
+                display: none
+    .space
+        background: url("../img/space.jpg") 50% center / cover no-repeat fixed rgb(0, 0, 0)
+        min-height: 768px
+        @media (max-width: 1280px)
+            min-height: 668px
+        @media (max-width: 960px)
+            background-attachment: scroll
+        @media (max-width: 500px)
+            min-height: 568px
+        .space_container
+            +AreaWidth(space)
+            .space_black
+                +absolute(-95px,null,null,340px)
+                @media (max-width: 1460px)
+                    +absolute(-75px,null,null,50%)
+                    margin: 0px 0px 0px -215px
+                @media (max-width: 500px)
+                    +absolute(-75px,null,null,30%)
+                    width: 100%
+                    max-width: 50%
+                    margin: 0px    
+            .space_line
+                +absolute(185px,null,null,165px)
+                @media (max-width: 1460px)
+                    +absolute(40vh,null,null,65px)
+                @media (max-width: 500px)
+                    display: none
+            .space_quadrilateral1
+                +absolute(-125px,null,null,620px)
+                @media (max-width: 1460px)
+                    +absolute(80px,60px,null,auto)
+                @media (max-width: 500px)
+                    display: none
+            .space_quadrilateral2
+                +absolute(530px,85px,null,null)
+                @media (max-width: 500px)
+                    display: none
+            .space_quadrilateral3
+                +absolute(270px,220px,null,null)
+                @media (max-width: 1460px)
+                    +absolute(370px,220px,null,null)
+                @media (max-width: 767px)
+                    display: none
+    .start
+        background-color: #000
+        margin: 0px 0px 160px
+        @media (max-width: 1024px)
+            margin: 0px 0px 60px
+        @media (max-width: 960px)
+            margin: 0px
+        .start_container
+            +AreaWidth(block)
+            a
+                &:hover
+                    +StartStyle(null , #000)
+                .start_text
+                    width: 100%
+                    padding: 16px
+                    flex: 1 1 auto
+                    margin: 2px 0px 0px
+                    @media ( max-width: 1024px )
+                        padding: 19px 28px
+                .start_icon
+                    padding: 16px
+                    flex: 0 0 auto
+                    @media ( max-width: 1024px )
+                        padding: 0px 30px 30px
+                    .start_icon_svg
+                        flex: 0 0 auto
+                        margin: 0px 16px 0px 0px
+                        svg
+                            max-width: 20px
+                            height: auto
+                    .start_icon_text
+                        align-items: center
+                        flex: 1 1 auto          
+            .start_H
+                +StartStyle(#000,#FFF)
+            .start_E
+                +StartStyle(rgb(57, 57, 57),#FFF)
+            .start_DC
+                +StartStyle(rgb(118, 118, 118),#000)
+            .start_DS
+                +StartStyle(rgb(204, 204, 204),#000)
+    .join
+        background-color: #000
+        padding: 0px 0px 200px
+        .join_container
+            +AreaWidth(join)            
+            .join_left
+                width: 575px
+                flex: 0 0 auto
+                @media (max-width: 1680px)
+                    width: 50%
+                @media (max-width: 1024px)
+                    margin: 0px 30px 30px
+                @media (max-width: 960px)
+                    width: 100%
+                    margin: 30px 0px
+                h2
+                    +font-stlye(32px,600,#FFF, 40px)
+                    padding: 0px 0px 0px 16px
+                    @media (max-width: 1024px)
+                        padding: 0px
+                    @media (max-width: 960px)
+                        +font-stlye(24px,600,#FFF, 34px)
+            .join_right
+                flex: 1 1 auto
+                padding: 0px 330px 35px 208px
+                @media (max-width: 1680px)
+                    width: 50%
+                    padding: 0px 16px 35px
+                @media (max-width: 1024px)
+                    padding: 0px 30px 35px
+                @media (max-width: 960px)
+                    width: 100%
+                    padding: 0px 0px 35px
+                .join_text
+                    p
+                        +font-stlye(16px,600,#FFF, 24px)
+                .join_btn
+                    margin: 70px 0px 0px
+                    @media (max-width: 960px)
+                        margin: 30px 0px 0px
+                    a   
+                        opacity: 1
+                        &:hover
+                            opacity: 0.6
+                        img
+                            margin: 0px 16px 0px 0px
+                        span
+                            +font-stlye(16px,null,#FFF, null)
+                            @media (max-width: 960px)
+                                +font-stlye(12px,null,#FFF, null)
+
+footer
+    height: 48px
+    background-color: #000
+    @media (max-width: 1024px)
+        height: auto
+        padding: 0px 0px 18px
+    .footer_container
+        +AreaWidth(footer)
+        .footer_logo
+            width: 190px
+            height: 48px
+            flex: 0 0 auto
+            @media (max-width: 1280px)
+                width: 40px
+            @media (max-width: 1024px)
+                width: 80px
+                flex: 0 0 auto
+            a
+                +LogoHover()
+                .logo_icon
+                    width: 16px
+                    fill: #FFF
+        .footer_nav
+            flex: 1 1 auto
+            padding: 0px 100px 0px 0px
+            @media (max-width: 1024px)
+                padding: 0px
+                height: auto
+            ul
+                @media (max-width: 670px)
+                    justify-content: flex-start !important
+                    flex-wrap: wrap
+                li
+                    +font-stlye(12px,400,#FFF, 48px)
+                    width: auto
+                    @media (max-width: 670px)
+                        +font-stlye(12px,400,#FFF, 30px)
+                        margin: 0px 20px 0px 0px !important
+                    a
+                        color: #fff
+                        position: relative
+                        +FooterDash()
+                        
+        .footer_icon
+            height: 48px
+            @media (max-width: 1024px)
+                +absolute(0px,30px,null,null)
+                width: 50%
+                justify-content: flex-end
+                position: absolute
+                flex: 1 1 auto
+                padding: 0px
+            @media (max-width: 500px)
+                +absolute(auto,auto,null,auto)
+                position: relative
+                width: 100%
+                justify-content: flex-start
+                margin: 16px 0px 0px
+            a
+                width: 48px
+                height: 48px
+                @media (max-width: 500px)
+                    justify-content: flex-start !important
+                &:hover
+                    +FooterIcon()
+                svg
+                    width: 20px
+                    fill: #fff
+                    transition: fill 200ms linear 0ms
+

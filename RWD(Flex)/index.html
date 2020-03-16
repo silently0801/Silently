@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #E4B660;
+    }
+
+    a {
+        text-decoration: unset;
+    }
+
+    .img_style {
+        background-position: center;
+        background-size: cover;
+    }
+
+    #all {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /*左邊or上面*/
+    #menu {
+        height: 100vh;
+        width: 366px;
+        display: flex;
+        flex-direction: column;
+        background-color: #F2AB39;
+    }
+
+    #menu_top {
+        width: 100%;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #logo {
+        height: 200px;
+        width: 200px;
+        background-image: url("http://139.162.25.65/img/avatar.jpg");
+    }
+
+    #menu_bot {
+        width: 100%;
+        flex: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        list-style: none;
+        background-color: rgba(218, 216, 129, 0.9);
+        margin: 0 0 10px 20px;
+        font-size: 40px;
+        font-family: 微軟正黑體;
+        font-weight: bold;
+    }
+
+    /*右邊or下面*/
+    #content {
+        height: 100vh;
+        width: calc(100% - 366px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #photo_all {
+        height: 500px;
+        width: 1024px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .photo_style {
+        height: 100%;
+        flex: 1;
+    }
+
+    .photo_style:hover {
+        flex: 2;
+    }
+
+    #photoA {
+        background-image: url("http://139.162.25.65/img/photo1.jpg");
+    }
+
+    #photoB {
+        background-image: url("http://139.162.25.65/img/photo2.jpg");
+    }
+
+
+    #photoC {
+        background-image: url("http://139.162.25.65/img/photo3.jpg");
+    }
+
+    .lightbox {
+        /** Default lightbox to hidden */
+        display: none;
+        /** Position and style */
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        margin-top: 5%;
+    }
+
+    #imgA:target {
+        outline: none;
+        display: block;
+    }
+
+    #imgB:target {
+        outline: none;
+        display: block;
+    }
+
+    #imgC:target {
+        outline: none;
+        display: block;
+    }
+
+    .mask {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: 1s;
+    }
+
+    .mask:hover {
+        transition: 1s;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    @media (max-width: 1389px) {
+        /*Tablet_L*/
+
+        #photo_all {
+            width: 700px;
+        }
+
+        #photoA {
+            flex: unset;
+            height: 50%;
+            width: 100%;
+        }
+
+        #photoB {
+            flex: unset;
+            height: 50%;
+            width: 50%;
+        }
+
+        #photoC {
+            flex: unset;
+            height: 50%;
+            width: 50%;
+        }
+
+    }
+
+    @media (max-width: 1066px) {
+
+        /*Tablet_s*/
+        #all {
+            justify-content: center;
+        }
+
+        #menu {
+            max-width: 768px;
+            width: 100%;
+            height: 100px;
+            flex-direction: row;
+        }
+
+        #logo {
+            height: 80px;
+            width: 80px;
+        }
+
+        ul {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #content {
+            width: unset;
+            height: calc(100vh - 100px);
+        }
+
+        #photo_all {
+            height: 800px;
+        }
+
+    }
+
+    @media (max-width:767px) {
+        #all {
+            height: unset;
+            width: unset;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #menu {
+            height: 80px;
+            flex-direction: column;
+        }
+
+        #menu_top {
+            justify-content: space-around;
+            flex: none;
+            height: 80px;
+        }
+
+        #nav_btn {
+            height: 50px;
+            width: 40px;
+            background-color: rgb(92, 92, 92);
+        }
+
+        #nav_btn:hover {
+            background-color: antiquewhite;
+
+        }
+
+        #wall {
+            height: 50px;
+            width: 40px;
+        }
+
+        #logo {
+            height: 54px;
+            width: 54px;
+        }
+
+        #content {
+            height: unset;
+            width: 100vw;
+            background-color: green;
+            display: flex;
+            /* align-items: center;
+            justify-content: center; */
+        }
+
+        #menu_bot {
+            background-color: #E4B660;
+            flex: unset;
+            display: flex;
+        }
+
+        .zindex {
+            z-index: 5;
+        }
+
+        #photo_all {
+            height: none;
+            width: 100%;
+        }
+
+        #photoA {
+            flex: unset;
+            height: 50vh;
+            width: 100%;
+        }
+
+        #photoB {
+            flex: unset;
+            margin: 0;
+            height: 50vh;
+            width: 100%;
+        }
+
+        #photoC {
+            flex: none;
+            height: 50vh;
+            width: 100%;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="all">
+        <div id="menu">
+            <div id="menu_top">
+                <div id="nav_btn"></div>
+                <div id="logo" class="img_style"></div>
+                <div id="wall"></div>
+            </div>
+            <div id="menu_bot" class="menu_bot">
+                <ul>
+                    <li class="btn"><a href="#imgA">圖片一</a></li>
+                    <li class="btn"><a href="#imgB">圖片二</a></li>
+                    <li class="btn"><a href="#imgC">圖片三</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="photo_all">
+                <div id="photoA" class="photo_style img_style">
+                    <a href="#imgA">
+                        <div class="mask"></div>
+                    </a>
+                </div>
+                <div id="photoB" class="photo_style img_style">
+                    <a href="#imgB">
+                        <div class="mask"></div>
+                    </a>
+                </div>
+                <div id="photoC" class="photo_style img_style">
+                    <a href="#imgC">
+                        <div class="mask"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#_" id="imgA" class="lightbox">
+        <img src="http://139.162.25.65/img/photo1.jpg" alt="">
+    </a>
+    <a href="#_" id="imgB" class="lightbox">
+        <img src="http://139.162.25.65/img/photo2.jpg" alt="">
+    </a>
+    <a href="#_" id="imgC" class="lightbox">
+        <img src="http://139.162.25.65/img/photo3.jpg" alt="">
+    </a>
+</body>
+
+<script>
+    let navbtn = document.querySelector("#nav_btn");
+    let menu_bot = document.querySelector("#menu_bot");
+    let btn = document.querySelectorAll(".btn");
+    function zindex() {
+        menu_bot.classList.toggle('zindex');
+    }
+    navbtn.addEventListener("click", zindex);
+    btn.forEach(input => input.addEventListener("click", zindex));
+</script>
+
+</html>

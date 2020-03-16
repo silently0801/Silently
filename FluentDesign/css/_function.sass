@@ -1,0 +1,158 @@
+$nav_color: #000
+$logoIcon_color: #FFF  
+$font_white: #FFF
+$introduction_bg: #000
+$web_color: rgb(37, 142, 222)
+$windows_color: rgb(79, 229, 255)
+$ios_color: rgb(207, 143, 255)
+$android_color: rgb(105, 229, 110)
+
+@mixin font-stlye($size:16px,$weight:600,$color:#FFF, $line_hight:null)
+    font-size: $size !important
+    font-weight: $weight !important
+    color: $color !important
+    line-height: $line_hight !important
+
+@mixin PaddingMidia ($media , $top , $right , $bottom ,$left)
+    @if $media == null
+        padding:  $top $right $bottom $left
+    @else
+        @media ( max-width: $media)
+            padding:  $top $right $bottom $left
+            
+@mixin AreaWidth($who)
+    width: 1536px
+    @media ( max-width: 1680px )
+        width: 1336px
+    @media ( max-width: 1460px )
+        width: 1136px
+    @media ( max-width: 1280px )
+        width: 960px
+    @media ( max-width: 1024px )
+        width: 100%
+        @if $who == "introduction" 
+            padding: 175px 30px 90px
+        @else if $who == "block"
+            padding: 0
+        @else if $who == "footer"
+            flex-direction: column
+            position: relative
+            padding: 0px 30px
+        @else 
+            padding: 0px 30px
+    @media ( max-width: 960px )
+        @if $who == "introduction" 
+            padding: 145px 30px 60px
+        @else if $who == "block"
+            padding: 0
+        @else if $who == "experience"
+            padding: 0px 30px 40px
+        @else if $who == "join"
+            flex-wrap: wrap
+            padding: 0px 30px
+        @else 
+            padding: 0px 30px
+    @media ( max-width: 670px)
+        @if $who == "introduction" 
+            padding: 0px 30px 30px
+        @else if $who == "features"
+            justify-content: flex-start !important
+        @else if $who == "footer"
+            padding: 10px 30px 0px
+
+@mixin absolute($top:unset,$right:unset,$bottom:unset,$left:unset)
+    position: absolute
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+/*logo_hover*/
+@mixin LogoHover()
+    &:hover
+        svg
+            rect
+                transition: all 200ms linear 0ms
+            .microsoft-red
+                fill: rgb(242, 80, 34) !important
+            .microsoft-green
+                fill: rgb(127, 186, 0) !important
+            .microsoft-blue
+                fill: rgb(0, 164, 239) !important
+            .microsoft-yellow
+                fill: rgb(255, 185, 0) !important
+@mixin NavigationHover
+    &:hover
+        .web_btn
+            +font-stlye (16px, 600 , $web_color,null)
+        .windows_btn
+            +font-stlye (16px, 600 , $windows_color,null)
+        .ios_btn
+            +font-stlye (16px, 600 , $ios_color,null)
+        .android_btn
+            +font-stlye (16px, 600 , $android_color,null)
+/*device Area*/
+@mixin BlockStyle($color,$hover_color,$who)
+    background-color: $color
+    &:hover
+        background-color: $hover_color
+    width: 25%
+    flex: 0 0 25%
+    height: 384px
+    z-index: 2
+    @media ( max-width: 1024px )
+        width: 50%
+        flex: 0 0 50%
+        height: 320px
+    @media ( max-width: 768px )
+        width: 100%
+        flex: 0 0 100%
+        @if $who == "start"
+            height: auto
+            min-height: 260px
+        
+@mixin BeforeAfter()
+    content: ""
+    width: 50vw
+    height: 100%
+    z-index: 1
+/*start Area*/
+@mixin StartStyle( $bg_color:unset , $hover_color:unset)
+    @if $bg_color != null      
+        +BlockStyle($bg_color,#FFF,start)
+    .start_text
+        p
+            +font-stlye(32px,600,$hover_color,40px)
+            @media ( max-width: 1280px )
+                +font-stlye(28px,600,$hover_color,40px)
+    .start_icon
+        .start_icon_svg
+            svg
+                fill: $hover_color
+        .start_icon_text
+            label
+                color: $hover_color
+
+@mixin FooterDash()
+    &::after
+        +absolute(null,null,-6px,0px)
+        content: ""
+        width: 100%
+        opacity: 0
+        height: 1px
+        background-color: rgb(255, 255, 255)
+        transition: all 200ms linear 0ms
+    &:hover::after
+        opacity: 1
+        bottom: -2px
+    
+@mixin FooterIcon()
+    .link
+        fill: rgb(0, 119, 181)
+    .ball
+        fill: rgb(234, 76, 137)
+    .twitter
+        fill: rgb(56, 161, 243)
+    .microsoft
+        fill: rgb(0, 171, 108)
+    .fb
+        fill: rgb(59, 89, 152)
