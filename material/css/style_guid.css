@@ -1,0 +1,603 @@
+@-webkit-keyframes square {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    -webkit-transform: scale(3) translateX(1000px) rotate(600deg);
+            transform: scale(3) translateX(1000px) rotate(600deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes square {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    -webkit-transform: scale(3) translateX(1000px) rotate(600deg);
+            transform: scale(3) translateX(1000px) rotate(600deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@-webkit-keyframes square2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    -webkit-transform: scale(3) translateX(-1000px) rotate(600deg);
+            transform: scale(3) translateX(-1000px) rotate(600deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes square2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    -webkit-transform: scale(3) translateX(-1000px) rotate(600deg);
+            transform: scale(3) translateX(-1000px) rotate(600deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+#app {
+  height: auto;
+  width: 100%;
+}
+
+#app .bg-bubbles {
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 140%;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#53e3a6));
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+}
+
+#app .bg-bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  border-radius: 15%;
+}
+
+#app .bg-bubbles li:nth-child(1) {
+  left: -160px;
+  top: 5%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 82px;
+  height: 82px;
+}
+
+#app .bg-bubbles li:nth-child(2) {
+  left: -160px;
+  top: 10%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  width: 96px;
+  height: 96px;
+}
+
+#app .bg-bubbles li:nth-child(3) {
+  left: -160px;
+  top: 15%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 84px;
+  height: 84px;
+}
+
+#app .bg-bubbles li:nth-child(4) {
+  left: -160px;
+  top: 20%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 85px;
+  height: 85px;
+}
+
+#app .bg-bubbles li:nth-child(5) {
+  left: -160px;
+  top: 25%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  width: 108px;
+  height: 108px;
+}
+
+#app .bg-bubbles li:nth-child(6) {
+  left: -160px;
+  top: 30%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 102px;
+  height: 102px;
+}
+
+#app .bg-bubbles li:nth-child(7) {
+  left: -160px;
+  top: 35%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  width: 62px;
+  height: 62px;
+}
+
+#app .bg-bubbles li:nth-child(8) {
+  left: -160px;
+  top: 40%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 116px;
+  height: 116px;
+}
+
+#app .bg-bubbles li:nth-child(9) {
+  left: -160px;
+  top: 45%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 113px;
+  height: 113px;
+}
+
+#app .bg-bubbles li:nth-child(10) {
+  left: -160px;
+  top: 50%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 76px;
+  height: 76px;
+}
+
+#app .bg-bubbles li:nth-child(11) {
+  left: -160px;
+  top: 55%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+  width: 107px;
+  height: 107px;
+}
+
+#app .bg-bubbles li:nth-child(12) {
+  left: -160px;
+  top: 60%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  width: 66px;
+  height: 66px;
+}
+
+#app .bg-bubbles li:nth-child(13) {
+  left: -160px;
+  top: 65%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 19s;
+          animation-duration: 19s;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+  width: 107px;
+  height: 107px;
+}
+
+#app .bg-bubbles li:nth-child(14) {
+  left: -160px;
+  top: 70%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  width: 56px;
+  height: 56px;
+}
+
+#app .bg-bubbles li:nth-child(15) {
+  left: -160px;
+  top: 75%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 98px;
+  height: 98px;
+}
+
+#app .bg-bubbles li:nth-child(16) {
+  left: -160px;
+  top: 80%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 108px;
+  height: 108px;
+}
+
+#app .bg-bubbles li:nth-child(17) {
+  left: -160px;
+  top: 85%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  width: 89px;
+  height: 89px;
+}
+
+#app .bg-bubbles li:nth-child(18) {
+  left: -160px;
+  top: 90%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  width: 106px;
+  height: 106px;
+}
+
+#app .bg-bubbles li:nth-child(19) {
+  left: -160px;
+  top: 95%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 120px;
+  height: 120px;
+}
+
+#app .bg-bubbles li:nth-child(20) {
+  left: -160px;
+  top: 100%;
+  -webkit-animation: square 17s infinite;
+          animation: square 17s infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+  width: 104px;
+  height: 104px;
+}
+
+#app .bg-bubbles li:nth-child(21) {
+  right: -160px;
+  top: 5%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 115px;
+  height: 115px;
+}
+
+#app .bg-bubbles li:nth-child(22) {
+  right: -160px;
+  top: 10%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 71px;
+  height: 71px;
+}
+
+#app .bg-bubbles li:nth-child(23) {
+  right: -160px;
+  top: 15%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 56px;
+  height: 56px;
+}
+
+#app .bg-bubbles li:nth-child(24) {
+  right: -160px;
+  top: 20%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+  width: 96px;
+  height: 96px;
+}
+
+#app .bg-bubbles li:nth-child(25) {
+  right: -160px;
+  top: 25%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 97px;
+  height: 97px;
+}
+
+#app .bg-bubbles li:nth-child(26) {
+  right: -160px;
+  top: 30%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  width: 86px;
+  height: 86px;
+}
+
+#app .bg-bubbles li:nth-child(27) {
+  right: -160px;
+  top: 35%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 118px;
+  height: 118px;
+}
+
+#app .bg-bubbles li:nth-child(28) {
+  right: -160px;
+  top: 40%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  width: 73px;
+  height: 73px;
+}
+
+#app .bg-bubbles li:nth-child(29) {
+  right: -160px;
+  top: 45%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  width: 68px;
+  height: 68px;
+}
+
+#app .bg-bubbles li:nth-child(30) {
+  right: -160px;
+  top: 50%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  width: 103px;
+  height: 103px;
+}
+
+#app .bg-bubbles li:nth-child(31) {
+  right: -160px;
+  top: 55%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  width: 45px;
+  height: 45px;
+}
+
+#app .bg-bubbles li:nth-child(32) {
+  right: -160px;
+  top: 60%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 74px;
+  height: 74px;
+}
+
+#app .bg-bubbles li:nth-child(33) {
+  right: -160px;
+  top: 65%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  width: 117px;
+  height: 117px;
+}
+
+#app .bg-bubbles li:nth-child(34) {
+  right: -160px;
+  top: 70%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 97px;
+  height: 97px;
+}
+
+#app .bg-bubbles li:nth-child(35) {
+  right: -160px;
+  top: 75%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  width: 119px;
+  height: 119px;
+}
+
+#app .bg-bubbles li:nth-child(36) {
+  right: -160px;
+  top: 80%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  width: 46px;
+  height: 46px;
+}
+
+#app .bg-bubbles li:nth-child(37) {
+  right: -160px;
+  top: 85%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  width: 111px;
+  height: 111px;
+}
+
+#app .bg-bubbles li:nth-child(38) {
+  right: -160px;
+  top: 90%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  width: 65px;
+  height: 65px;
+}
+
+#app .bg-bubbles li:nth-child(39) {
+  right: -160px;
+  top: 95%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  width: 47px;
+  height: 47px;
+}
+
+#app .bg-bubbles li:nth-child(40) {
+  right: -160px;
+  top: 0%;
+  -webkit-animation: square2 17s infinite;
+          animation: square2 17s infinite;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 110px;
+  height: 110px;
+}
+/*# sourceMappingURL=style_guid.css.map */

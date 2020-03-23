@@ -1,0 +1,65 @@
+
+@mixin keyframes($animationName) 
+    @keyframes #{$animationName} 
+        @content;
+@function randomNum($min, $max) 
+  $rand: random()
+  $randomNum: $min + floor($rand * (($max - $min) + 1))
+  @return $randomNum
+
+@include keyframes(square)
+    0%    
+        transform: translateX(0) 
+        background-color: rgba(255, 255, 255, .3)
+    100%  
+        transform: scale(3) translateX(1000px) rotate(600deg)
+        background-color: rgba(255, 255, 255, 0)
+@include keyframes(square2)
+    0%    
+        transform: translateX(0) 
+        background-color: rgba(255, 255, 255, .3)
+    100%  
+        transform: scale(3) translateX(-1000px) rotate(600deg)
+        background-color: rgba(255, 255, 255, 0)
+body
+	font-family: 'Source Sans Pro', sans-serif
+	color: white
+	font-weight: 300
+#app
+    height: auto
+    width: 100%
+    .bg-bubbles
+        position: fixed
+        top: -20%
+        left: -10%
+        width: 120%
+        height: 140%
+        z-index: -1
+        background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%)
+        li
+            position: absolute
+            list-style: none
+            display: block
+            transition-timing-function: linear
+            border-radius: 15%
+            @for $i from 1 through 40
+                $variable: randomNum(40,120)
+                @if $i < 21
+                    &:nth-child(#{$i})
+                        left: -160px
+                        top: $i*5#{%}
+                        animation: square 17s infinite
+                        animation-duration: randomNum(10,20)#{s}
+                        animation-delay: randomNum(-5,10)#{s}
+                        width: $variable#{px}
+                        height: $variable#{px}
+                @else
+                    &:nth-child(#{$i})
+                        right: -160px
+                        top: $i%20*5#{%}
+                        animation: square2 17s infinite
+                        animation-duration: randomNum(10,20)#{s}
+                        animation-delay: randomNum(-5,10)#{s}
+                        width: $variable#{px}
+                        height: $variable#{px}
+    main
